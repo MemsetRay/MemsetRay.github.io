@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://MemsetRay.github.io</id>
     <title>Ray的刷题小屋</title>
-    <updated>2021-07-11T07:17:30.900Z</updated>
+    <updated>2021-07-11T07:27:05.800Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://MemsetRay.github.io"/>
     <link rel="self" href="https://MemsetRay.github.io/atom.xml"/>
@@ -11,35 +11,49 @@
     <icon>https://MemsetRay.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Ray的刷题小屋</rights>
     <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://MemsetRay.github.io/post/hello-gridea/</id>
-        <link href="https://MemsetRay.github.io/post/hello-gridea/">
+        <title type="html"><![CDATA[最短Hamilton路径--状态压缩DP]]></title>
+        <id>https://MemsetRay.github.io/post/zui-duan-hamilton-lu-jing-zhuang-tai-ya-suo-dp/</id>
+        <link href="https://MemsetRay.github.io/post/zui-duan-hamilton-lu-jing-zhuang-tai-ya-suo-dp/">
         </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+        <updated>2021-07-11T07:19:05.000Z</updated>
+        <content type="html"><![CDATA[<p>题目链接：<a href="https://www.acwing.com/problem/content/description/93/">最短Hamilton路径</a></p>
+<p>首先需要注意一下最短Hamilton路径与求最短路的区别，求最短Hamilton路径并非求最短路，这里需要注意的是，求最短路要求找到一条最短路径，但这条路径并不要求经过所有的点，而最短Hamilton路径要求找到的最短路径<strong>必须</strong>经过所有的点</p>
+<p>找最短Hamilton路径的方法为二进制状态压缩DP，用f[i][j]来保存每个状态，表示从0走到j，经过的所有点为i的所有路径</p>
+<p>当前状态f[i][j]是如何得到的：走到j点的前一个点k点的状态f[i - (1 &lt;&lt; j)][k]的路径长度，加上由k点到j点的路径长度w[k][j]的和，与之前的f[i][j]取最小值即为当前的状态f[i][j]</p>
+<p>即   <strong>f[i][j]=min(f[i][j], f[i - (1 &lt;&lt; j)][k]</strong></p>
+<p>AC代码：</p>
+<pre><code class="language-c">#include&lt;iostream&gt;
+#include&lt;algorithm&gt;
+#include&lt;cstring&gt;
+using namespace std;
+const int N = 20, M = 1 &lt;&lt; N;
+
+int n;
+int w[N][N];                            //用w来存储整个图
+int f[M][N];                            //f[i][j]表示从0走到j，走过的点为i的所有路径长度，i是一个20位二进制数，如果第k位为1，表示这个点已经走过了
+
+int main()
+{
+    cin &gt;&gt; n;                           //n个点
+    for(int i = 0; i &lt; n; i ++)         
+    {
+        for(int j = 0; j &lt; n; j ++)
+            cin &gt;&gt; w[i][j];             //输入n个点
+    }
+    
+    memset(f, 0x3f, sizeof f);          //初始化路径长度为无穷大
+    f[1][0] = 0;                        //初始化0号点的路径长度为0
+    for(int i = 0; i &lt; 1 &lt;&lt; n; i ++)    //枚举所有的状态
+        for(int j = 0; j &lt; n; j ++)
+            if(i &gt;&gt; j &amp; 1)              //从0走到j时，i中一定要包含j，即i的第j位一定为1
+                for(int k = 0; k &lt; n; k ++)             //枚举j点从哪一个点转移过来
+                    if((i - (1 &lt;&lt; j)) &gt;&gt; k &amp; 1)         //如果i除去第j个点之后包含第k个点
+                        f[i][j] = min(f[i][j], f[i - (1 &lt;&lt; j)][k] + w[k][j]);   //那么当前的状态就是从0走到k加上k走到j的所有路径取最小值
+                        
+    cout &lt;&lt; f[(1 &lt;&lt; n) - 1][n - 1] &lt;&lt; endl;             //输出走完所有的点，并且走到n-1号点时的距离
+    return 0;
+}
+</code></pre>
 ]]></content>
     </entry>
 </feed>

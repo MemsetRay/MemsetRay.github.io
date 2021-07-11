@@ -9,6 +9,7 @@
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/mdui/0.4.3/css/mdui.min.css">
+    <link rel="stylesheet" href="/media/css/post.css">
     <link rel="stylesheet" href="/media/live2d/css/live2d.css" />
     
 </head>
@@ -44,43 +45,74 @@
     </ul>
 </div>
 
-<div class="mdui-container">
-    <div class="mdui-row">
-        <div class="mdui-col-md-10 mdui-col-offset-md-1 ">
-            
-            
-                <div class="mdui-typo-display-1 mdui-m-b-2 mdui-m-l-1">
-                    <div class="mdui-row">
-                        <div class="mdui-col-xs-12">2021</div>
-                    </div>
-                    <div class="mdui-row">
+<div id="content" class="site-content">
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main" role="main">
+            <article id="post-1270" class="post-1270 post type-post status-publish format-standard hentry category-90 category-129 tag-149">
+                <header class="entry-header">
+                    <h1 class="entry-title">最短Hamilton路径--状态压缩DP</h1>
+                    <p class="entry-census">发布于 2021-07-11</p>
+                    <hr>
+                </header>
+                <div class="neko">
+                    <p>题目链接：<a href="https://www.acwing.com/problem/content/description/93/">最短Hamilton路径</a></p>
+<p>首先需要注意一下最短Hamilton路径与求最短路的区别，求最短Hamilton路径并非求最短路，这里需要注意的是，求最短路要求找到一条最短路径，但这条路径并不要求经过所有的点，而最短Hamilton路径要求找到的最短路径<strong>必须</strong>经过所有的点</p>
+<p>找最短Hamilton路径的方法为二进制状态压缩DP，用f[i][j]来保存每个状态，表示从0走到j，经过的所有点为i的所有路径</p>
+<p>当前状态f[i][j]是如何得到的：走到j点的前一个点k点的状态f[i - (1 &lt;&lt; j)][k]的路径长度，加上由k点到j点的路径长度w[k][j]的和，与之前的f[i][j]取最小值即为当前的状态f[i][j]</p>
+<p>即   <strong>f[i][j]=min(f[i][j], f[i - (1 &lt;&lt; j)][k]</strong></p>
+<p>AC代码：</p>
+<pre><code class="language-c">#include&lt;iostream&gt;
+#include&lt;algorithm&gt;
+#include&lt;cstring&gt;
+using namespace std;
+const int N = 20, M = 1 &lt;&lt; N;
+
+int n;
+int w[N][N];                            //用w来存储整个图
+int f[M][N];                            //f[i][j]表示从0走到j，走过的点为i的所有路径长度，i是一个20位二进制数，如果第k位为1，表示这个点已经走过了
+
+int main()
+{
+    cin &gt;&gt; n;                           //n个点
+    for(int i = 0; i &lt; n; i ++)         
+    {
+        for(int j = 0; j &lt; n; j ++)
+            cin &gt;&gt; w[i][j];             //输入n个点
+    }
+    
+    memset(f, 0x3f, sizeof f);          //初始化路径长度为无穷大
+    f[1][0] = 0;                        //初始化0号点的路径长度为0
+    for(int i = 0; i &lt; 1 &lt;&lt; n; i ++)    //枚举所有的状态
+        for(int j = 0; j &lt; n; j ++)
+            if(i &gt;&gt; j &amp; 1)              //从0走到j时，i中一定要包含j，即i的第j位一定为1
+                for(int k = 0; k &lt; n; k ++)             //枚举j点从哪一个点转移过来
+                    if((i - (1 &lt;&lt; j)) &gt;&gt; k &amp; 1)         //如果i除去第j个点之后包含第k个点
+                        f[i][j] = min(f[i][j], f[i - (1 &lt;&lt; j)][k] + w[k][j]);   //那么当前的状态就是从0走到k加上k走到j的所有路径取最小值
                         
-                        
-                            <div class="mdui-col-xs-6 mdui-p-a-1">
-                                <div class="mdui-card">
-                                    <div class="mdui-card-media">
-                                        <img width=536px height=300px src=" https://acg.toubiec.cn/random.php"/>
-                                        <div class="mdui-card-primary">
-                                            <div class="mdui-card-primary-title">最短Hamilton路径--状态压缩DP</div>
-                                            <div class="mdui-card-primary-subtitle">2021-07-11</div>
-                                        </div>
-                                    </div>
-                                    <div class="mdui-card-actions" style="float:right;">
-                                        <a href="https://MemsetRay.github.io/post/zui-duan-hamilton-lu-jing-zhuang-tai-ya-suo-dp/" class="mdui-btn mdui-color-theme-accent mdui-ripple">点击查看</a>
-                                    </div>
-                                </div>
-                            </div>
-                        
-                        
-                    </div>
+    cout &lt;&lt; f[(1 &lt;&lt; n) - 1][n - 1] &lt;&lt; endl;             //输出走完所有的点，并且走到n-1号点时的距离
+    return 0;
+}
+</code></pre>
+
                 </div>
-            
+            </article>
+        </main>
+    </div>
+    <div class="doc-footer-nav mdui-color-theme">
+        <div class="mdui-container">
+            <div class="mdui-row">
+                
+                <div class="mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left"></div>
+                
+                
+                <div class="mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left"></div>
+                
+            </div>
         </div>
     </div>
-    <div class="mdui-row">
-        
-
-    </div>
+    <br>
+    
+    <div class="comment"></div>
 </div>
 <footer class="mdui-container footer ">
     <div class="head_card-offset"></div>
@@ -132,4 +164,23 @@
 
 </body>
 <script src="//cdnjs.loli.net/ajax/libs/mdui/0.4.3/js/mdui.min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    $('.comment').bind('DOMNodeInserted',()=>{
+        $('.comment').unbind()
+
+        $('.vbtn').addClass(' mdui-btn mdui-color-theme-accent mdui-ripple')
+    })
+
+    let valine = new Valine({
+        el: '.comment',
+        
+        
+        
+        path: window.location.pathname,
+        pageSize: 30,
+        avatar:'mm',
+        notify:true
+    })
+</script>
 </html>
