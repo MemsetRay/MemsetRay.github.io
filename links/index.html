@@ -388,6 +388,33 @@
     
 
 
+    <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+    <div id="waline"></div>
+    <style>
+    #waline textarea {
+        box-sizing: border-box;
+        background: url("https://gitee.com/cungudafa/source/raw/master/img/gif/Sitich/Sitich2.gif") 100% 100% no-repeat;
+    }
+    </style>
+    <script>
+        Waline({
+              el: '#waline',
+              serverURL: 'waline-ten-pied.vercel.app#服务端地址',
+              pageSize: '10',
+              lang: 'zh-CN',
+              requiredFields: ['nick','mail'], //设置必填项
+              placeholder: '快来发送评论吐槽吧~',
+              visitor: 'true',
+              emoji: [
+                  'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba',
+                  'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili',
+                  'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/weibo',
+              ],
+              avatar: 'mp',
+              dark: 'false',
+            });
+    </script>
+
 
 
 <div id="tcomment"></div>
@@ -515,7 +542,7 @@ twikoo.init({
 <script>
   var now = new Date(); 
   function createtime() { 
-    var grt= new Date("04/09/2022 16:44:00");//此处修改你的建站时间或者网站上线时间 
+    var grt= new Date("09/04/2022 16:44:00");//此处修改你的建站时间或者网站上线时间 
     now.setTime(now.getTime()+250); 
     days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
     hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
