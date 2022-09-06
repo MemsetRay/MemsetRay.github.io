@@ -1068,12 +1068,20 @@ signed main()
     <script>
         Waline({
               el: '#waline',
-              serverURL: 'waline-ten-pied.vercel.app#服务端地址',
+              serverURL: 'waline-ten-pied.vercel.app',
               pageSize: '10',
               lang: 'zh-CN',
               requiredFields: ['nick','mail'], //设置必填项
               placeholder: '快来发送评论吐槽吧~',
               visitor: 'true',
+	      locale: {
+    		level0: 'Level 1',
+    		level1: 'Level 2',
+    		level2: 'Level 3',
+    		level3: 'Level 4',
+    		level4: 'Level 5',
+    		level5: 'Level 6',
+ 		 },
               emoji: [
                   'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba',
                   'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili',
@@ -1081,22 +1089,11 @@ signed main()
               ],
               avatar: 'mp',
               dark: 'false',
+
             });
     </script>
 
 
-
-<div id="tcomment"></div>
-<script src="https://cdn.staticfile.org/twikoo/1.6.7/twikoo.all.min.js"></script>
-<script>
-twikoo.init({
-  envId: 'twikoo2-puce.vercel.app', // 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
-  el: '#tcomment', // 容器元素
-  // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
-   path: location.pathname, // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
-   lang: 'zh-CN', // 用于手动设定评论区语言，支持的语言列表 https://github.com/imaegoo/twikoo/blob/main/src/client/utils/i18n/index.js
-})
-</script>
 
       <section class="author-profile">
         <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
