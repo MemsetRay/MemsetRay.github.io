@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memsetray.github.io/"/>
-  <updated>2022-10-04T12:32:11.156Z</updated>
+  <updated>2022-10-14T18:33:12.317Z</updated>
   <id>https://memsetray.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>树形DP笔记</title>
+    <link href="https://memsetray.github.io/2022/10/15/%E6%A0%91%E5%BD%A2DP%E7%AC%94%E8%AE%B0/"/>
+    <id>https://memsetray.github.io/2022/10/15/树形DP笔记/</id>
+    <published>2022-10-14T18:31:45.000Z</published>
+    <updated>2022-10-14T18:33:12.317Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;树形DP笔记&lt;/h1&gt;
+&lt;h2 id=&quot;1-树形背包&quot;&gt;1. 树形背包&lt;/h2&gt;
+&lt;p&gt;给定一个&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>CodeForces1700-2000难度部分题题解</title>
