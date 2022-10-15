@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memsetray.github.io/"/>
-  <updated>2022-10-15T11:15:43.252Z</updated>
+  <updated>2022-10-15T14:13:42.735Z</updated>
   <id>https://memsetray.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AtCoderBeginnerContest046题解</title>
+    <link href="https://memsetray.github.io/2022/10/15/AtCoderBeginnerContest046%E9%A2%98%E8%A7%A3/"/>
+    <id>https://memsetray.github.io/2022/10/15/AtCoderBeginnerContest046题解/</id>
+    <published>2022-10-15T14:12:03.000Z</published>
+    <updated>2022-10-15T14:13:42.735Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;AtCoder Beginner Contest 046 题解&lt;/h1&gt;
+&lt;h2 id=&quot;a-atcodeer-and-paint-cans&quot;&gt;A - &lt;strong&gt;AtCoDeer and Paint
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>树形DP笔记</title>
