@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memsetray.github.io/"/>
-  <updated>2022-10-15T14:13:42.735Z</updated>
+  <updated>2022-10-18T03:10:18.143Z</updated>
   <id>https://memsetray.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>线段树</title>
+    <link href="https://memsetray.github.io/2022/10/18/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
+    <id>https://memsetray.github.io/2022/10/18/线段树/</id>
+    <published>2022-10-18T03:08:52.000Z</published>
+    <updated>2022-10-18T03:10:18.143Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;线段树&lt;/h1&gt;
+&lt;h2 id=&quot;1-单点修改-区间查询线段树&quot;&gt;1.单点修改，区间查询线段树&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;#include&amp;lt;bits/stdc++.h&amp;gt;
+using namespace
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>AtCoderBeginnerContest046题解</title>

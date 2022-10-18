@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">archive_a: 2022/9 | Ray&#39;s Blog</title>
+  <title itemprop="name">线段树 | Ray&#39;s Blog</title>
   
     <link rel="shortcut icon" href="https://s3.bmp.ovh/imgs/2022/09/04/c0bc4141609ace8f.jpg">
   
@@ -292,169 +292,598 @@
   </div>
 </header>
 
-      <div class="blank" style="padding-top: 75px;">
-</div>
-<div id="content" class="site-content">
-  <div id="main">
-    <header class="page-header">
-      <h1 class="cat-title">
-      归档</h1>
-      <span class="cat-des">
-        <p>
-        Archives</p>
-      </span>
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://s3.bmp.ovh/imgs/2022/10/18/4b26fcd037c3c646.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://s3.bmp.ovh/imgs/2022/10/18/4b26fcd037c3c646.jpg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      线段树</h1>
+      <p class="entry-census">
+        <span>
+          <a href="sakana.icu">
+            <img src="https://cdn.jsdelivr.net/gh/memsetray/cdn/img/custom/avatar.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="sakana.icu">Ray</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2022-10-18<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
     </header>
-    <div id="main-part">
-      <article class="art">
-        <div class="art-main">
-          <div class="art-content">
-            <div id="archives">
-              <p style="text-align:right;">
-                [<span id="al_expand_collapse" style="cursor: s-resize;">
-                全部展开/收缩</span>
-              ]</p>
-              
-              
-              
-              
-              
-                
-                <h3 class="al_year">2022年</h3>
-              
-              
-                
-                <ul class="al_mon_list">
-                  <li class="al_li">
-                    <span class="al_mon" style="cursor: s-resize;">
-                      10月(<span id="post-num">
-                      3</span>
-                    篇文章)</span>
-                    <ul class="al_post_list" style="">
-              
-                      <li>
-                        <a href="/2022/10/18/线段树/">
-                          <span style="color:#0bf;">
-                          18日11:08:52</span>
-                          线段树
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/2022/10/15/AtCoderBeginnerContest046题解/">
-                          <span style="color:#0bf;">
-                          15日22:12:03</span>
-                          AtCoderBeginnerContest046题解
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/2022/10/15/树形DP笔记/">
-                          <span style="color:#0bf;">
-                          15日02:31:45</span>
-                          树形DP笔记
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              
-              
-              
-              
-              
-              
-                
-                <ul class="al_mon_list">
-                  <li class="al_li">
-                    <span class="al_mon" style="cursor: s-resize;">
-                      09月(<span id="post-num">
-                      3</span>
-                    篇文章)</span>
-                    <ul class="al_post_list" style="">
-              
-                      <li>
-                        <a href="/2022/09/06/Codeforces1700-2000难度部分题题解/">
-                          <span style="color:#0bf;">
-                          06日22:36:37</span>
-                          CodeForces1700-2000难度部分题题解
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/2022/09/06/3分钟了解猫宫Hinata的FPS/">
-                          <span style="color:#0bf;">
-                          06日20:16:05</span>
-                          3分钟了解猫宫Hinata的FPS
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/2022/09/05/随想test/">
-                          <span style="color:#0bf;">
-                          05日22:54:56</span>
-                          随想test
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/2022/09/05/CodeForces1500-1600部分题题解/">
-                          <span style="color:#0bf;">
-                          05日12:02:58</span>
-                          CodeForces1500-1600部分题题解
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/2022/09/05/CodeForces2000-2300难度部分题题解/">
-                          <span style="color:#0bf;">
-                          05日08:35:49</span>
-                          CodeForces2000-2300难度部分题题解
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              
-              
+  </div>
+
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h1>线段树</h1>
+<h2 id="1-单点修改-区间查询线段树">1.单点修改，区间查询线段树</h2>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N = 2e5 + 10;
+
+struct info
+{
+	int minv, cnt_min;
+};
+
+struct Node
+{
+	info val;
+}tr[N * 4];
+int n, q;
+int a[N];
+
+info operator + (const info &amp;l, const info &amp;r)
+{
+	info a;
+	a.minv = min(l.minv, r.minv);
+	if(l.minv == r.minv)	a.cnt_min = l.cnt_min + r.cnt_min;
+	else if(l.minv &lt; r.minv)	a.cnt_min = l.cnt_min;
+	else	 a.cnt_min = r.cnt_min;
+	return a;
+}
+
+void pushup(int u)
+{
+	tr[u].val = tr[u &lt;&lt; 1].val + tr[u &lt;&lt; 1 | 1].val;
+}
+
+void build(int u, int l, int r)
+{
+	if(l == r)	tr[u].val = {a[l], 1};
+	else
+	{
+		int mid = l + r &gt;&gt; 1;
+		build(u &lt;&lt; 1, l, mid);
+		build(u &lt;&lt; 1 | 1, mid + 1, r);
+		pushup(u);
+	}
+}
+
+void change(int u, int l, int r, int pos, int val)
+{
+	if(l == r)	tr[u].val = {val, 1};
+	else
+	{
+		int mid = l + r &gt;&gt; 1;
+		if(pos &lt;= mid)	change(u &lt;&lt; 1, l, mid, pos, val);
+		else	change(u &lt;&lt; 1 | 1, mid + 1, r, pos, val);
+		pushup(u);
+	}
+}
+
+info query(int u, int l, int r, int ql, int qr)
+{
+	if(l == ql &amp;&amp; r == qr)	return tr[u].val;
+	int mid = l + r &gt;&gt; 1;
+	if(qr &lt;= mid)	return query(u &lt;&lt; 1, l, mid, ql, qr);
+	else if(ql &gt; mid)	return query(u &lt;&lt; 1 | 1, mid + 1, r, ql, qr);
+	else
+	{
+		return query(u &lt;&lt; 1, l, mid, ql, mid) + query(u &lt;&lt; 1 | 1, mid + 1, r, mid + 1, qr);
+	}
+	
+}
+
+int main()
+{
+	scanf(&quot;%d%d&quot;, &amp;n, &amp;q);
+	for(int i = 1; i &lt;= n; i ++)	scanf(&quot;%d&quot;, &amp;a[i]);
+	build(1, 1, n);
+	while(q --)
+	{
+		int a, b, c;
+		scanf(&quot;%d%d%d&quot;, &amp;a, &amp;b, &amp;c);
+		if(a == 1)
+		{
+			change(1, 1, n, b, c);
+		}
+		else
+		{
+			auto a = query(1, 1, n, b, c);
+			printf(&quot;%d %d\n&quot;, a.minv, a.cnt_min);
+		}
+	}
+}
+</code></pre>
+<h2 id="2-维护复杂信息的线段树-最大子段和">2.维护复杂信息的线段树（最大子段和）</h2>
+<pre><code class="language-cpp">#include&lt;iostream&gt;
+#include&lt;cstring&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+typedef long long ll;
+const int N = 2e5 + 10;
+
+struct info
+{
+	ll mss, mpre, msuf, s;
+	info () {}
+	info (int a):mss(a), mpre(a), msuf(a), s(a) {}
+};
+
+struct Node
+{
+	info val;
+}tr[N * 4];
+int n, q;
+int a[N];
+
+info operator + (const info &amp;l, const info &amp;r)
+{
+	info a;
+	a.mss = max(max(l.mss, r.mss), l.msuf + r.mpre);
+	a.mpre = max(l.mpre, l.s + r.mpre);
+	a.msuf = max(r.msuf, r.s + l.msuf);
+	a.s = l.s + r.s;
+	return a;
+}
+
+void pushup(int u)
+{
+	tr[u].val = tr[u &lt;&lt; 1].val + tr[u &lt;&lt; 1 | 1].val;
+}
+
+void build(int u, int l, int r)
+{
+	if(l == r)	tr[u].val = info(a[l]);
+	else
+	{
+		int mid = l + r &gt;&gt; 1;
+		build(u &lt;&lt; 1, l, mid);
+		build(u &lt;&lt; 1 | 1, mid + 1, r);
+		pushup(u);
+	}
+}
+
+void change(int u, int l, int r, int pos, int val)
+{
+	if(l == r)	tr[u].val = info(val);
+	else
+	{
+		int mid = l + r &gt;&gt; 1;
+		if(pos &lt;= mid)	change(u &lt;&lt; 1, l, mid, pos, val);
+		else	change(u &lt;&lt; 1 | 1, mid + 1, r, pos, val);
+		pushup(u);
+	}
+}
+
+info query(int u, int l, int r, int ql, int qr)
+{
+	if(l == ql &amp;&amp; r == qr)	return tr[u].val;
+	int mid = l + r &gt;&gt; 1;
+	if(qr &lt;= mid)	return query(u &lt;&lt; 1, l, mid, ql, qr);
+	else if(ql &gt; mid)	return query(u &lt;&lt; 1 | 1, mid + 1, r, ql, qr);
+	else
+	{
+		return query(u &lt;&lt; 1, l, mid, ql, mid) + query(u &lt;&lt; 1 | 1, mid + 1, r, mid + 1, qr);
+	}
+	
+}
+
+int main()
+{
+	scanf(&quot;%d%d&quot;, &amp;n, &amp;q);
+	for(int i = 1; i &lt;= n; i ++)	scanf(&quot;%d&quot;, &amp;a[i]);
+	build(1, 1, n);
+	while(q --)
+	{
+		ll a, b, c;
+		scanf(&quot;%lld%lld%lld&quot;, &amp;a, &amp;b, &amp;c);
+		if(a == 1)
+		{
+			change(1, 1, n, b, c);
+		}
+		else
+		{
+			auto a = query(1, 1, n, b, c);
+			printf(&quot;%lld\n&quot;, a.mss);
+		}
+	}
+}
+</code></pre>
+<h2 id="3-区间修改-区间查询线段树">3.区间修改，区间查询线段树</h2>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N = 2e5 + 10;
+typedef long long ll;
+ll n, q;
+ll a[N];
+
+struct info
+{
+	ll maxv;
+};
+
+struct tag
+{
+	ll add;
+};
+
+info operator + (const info &amp;l, const info &amp;r)
+{
+	return {max(l.maxv, r.maxv)};
+}
+
+info operator + (const info &amp;v, const tag &amp;t)
+{
+	return {v.maxv + t.add};
+}
+
+tag operator + (const tag &amp;t1, const tag &amp;t2)
+{
+	return {t1.add + t2.add};
+}
+
+struct node
+{
+	tag t;
+	info val;
+}tr[N * 4];
+
+void pushup(int u)
+{
+	tr[u].val = tr[u &lt;&lt; 1].val + tr[u &lt;&lt; 1 | 1].val;
+}
+
+void settag(int u, tag t)
+{
+	tr[u].val = tr[u].val + t;
+	tr[u].t = tr[u].t + t;
+}
+
+void pushdown(int u)
+{
+	if(tr[u].t.add != 0)
+	{
+		settag(u &lt;&lt; 1, tr[u].t);
+		settag(u &lt;&lt; 1 | 1, tr[u].t);
+		tr[u].t.add = 0;
+	}
+}
+
+void build(int u, int l, int r)
+{
+	if(l == r)	tr[u].val = {a[l]};
+	else
+	{
+		ll mid = l + r &gt;&gt; 1;
+		build(u &lt;&lt; 1, l, mid);
+		build(u &lt;&lt; 1 | 1, mid + 1, r);
+		pushup(u);
+	}
+}
+
+void modify(int u, int l, int r, int ql, int qr, tag t)
+{
+	if(l == ql &amp;&amp; r == qr)
+	{
+		settag(u, t);
+		return ;
+	}
+	ll mid = l + r &gt;&gt; 1;
+	pushdown(u);
+	if(qr &lt;= mid)	modify(u &lt;&lt; 1, l, mid, ql, qr, t);
+	else if(ql &gt; mid)	modify(u &lt;&lt; 1 | 1, mid + 1, r, ql, qr, t);
+	else
+	{
+		modify(u &lt;&lt; 1, l, mid, ql, mid, t);
+		modify(u &lt;&lt; 1 | 1, mid + 1, r, mid + 1, qr, t);
+	}
+	pushup(u);
+}
+
+info query(int u, int l, int r, int ql, int qr)
+{
+	if(l == ql &amp;&amp; r == qr)
+		return tr[u].val;
+	ll mid = l + r &gt;&gt; 1;
+	pushdown(u);
+	if(qr &lt;= mid)	query(u &lt;&lt; 1, l, mid, ql, qr);
+	else if(ql &gt; mid)	query(u &lt;&lt; 1 | 1, mid + 1, r, ql, qr);
+	else
+	{
+		return query(u &lt;&lt; 1, l, mid, ql, mid) + query(u &lt;&lt; 1 | 1, mid + 1, r, mid + 1, qr);
+	}
+}
+
+int main()
+{
+	scanf(&quot;%d%d&quot;, &amp;n, &amp;q);
+	for(int i = 1; i &lt;= n; i ++)	scanf(&quot;%d&quot;, &amp;a[i]);
+	build(1, 1, n);
+	while(q --)
+	{
+		int op;
+		scanf(&quot;%d&quot;, &amp;op);
+		if(op == 1)
+		{
+			int l, r, d;
+			scanf(&quot;%d%d%d&quot;, &amp;l, &amp;r, &amp;d);
+			modify(1, 1, n, l, r, (tag){d});
+		}
+		else
+		{
+			int l, r;
+			scanf(&quot;%d%d&quot;, &amp;l, &amp;r);
+			auto a = query(1, 1, n, l, r);
+			printf(&quot;%lld\n&quot;, a.maxv);
+		}
+	}
+	return 0;
+}
+</code></pre>
+<h2 id="区间修改-区间查询线段树-复杂标记">区间修改，区间查询线段树（复杂标记）</h2>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N = 2e5 + 10, mod = 1e9 + 7;
+typedef long long ll;
+ll n, q;
+ll a[N];
+
+struct tag
+{
+	ll mul, add;
+};
+
+tag operator + (const tag &amp;t1, const tag &amp;t2)
+{
+	return {t1.mul * t2.mul % mod, (t1.add * t2.mul + t2.add) % mod};
+}
+
+struct node
+{
+	tag t;
+	ll val;
+	int siz;
+}tr[N * 4];
+
+void pushup(int u)
+{
+	tr[u].val = (tr[u &lt;&lt; 1].val + tr[u &lt;&lt; 1 | 1].val) % mod;
+}
+
+void settag(int u, tag t)
+{
+	tr[u].val = (tr[u].val * t.mul + tr[u].siz * t.add) % mod;
+	tr[u].t = tr[u].t + t;
+}
+
+void pushdown(int u)
+{
+	if(tr[u].t.mul != 1 || tr[u].t.add != 0)
+	{
+		settag(u &lt;&lt; 1, tr[u].t);
+		settag(u &lt;&lt; 1 | 1, tr[u].t);
+		tr[u].t.add = 0;
+		tr[u].t.mul = 1;
+	}
+}
+
+void build(int u, int l, int r)
+{
+	tr[u].t = {1, 0};
+	tr[u].siz = r - l + 1;
+	if(l == r)	tr[u].val = {a[l]};
+	else
+	{
+		ll mid = l + r &gt;&gt; 1;
+		build(u &lt;&lt; 1, l, mid);
+		build(u &lt;&lt; 1 | 1, mid + 1, r);
+		pushup(u);
+	}
+}
+
+void modify(int u, int l, int r, int ql, int qr, tag t)
+{
+	if(l == ql &amp;&amp; r == qr)
+	{
+		settag(u, t);
+		return ;
+	}
+	ll mid = l + r &gt;&gt; 1;
+	pushdown(u);
+	if(qr &lt;= mid)	modify(u &lt;&lt; 1, l, mid, ql, qr, t);
+	else if(ql &gt; mid)	modify(u &lt;&lt; 1 | 1, mid + 1, r, ql, qr, t);
+	else
+	{
+		modify(u &lt;&lt; 1, l, mid, ql, mid, t);
+		modify(u &lt;&lt; 1 | 1, mid + 1, r, mid + 1, qr, t);
+	}
+	pushup(u);
+}
+
+ll query(int u, int l, int r, int ql, int qr)
+{
+	if(l == ql &amp;&amp; r == qr)
+		return tr[u].val;
+	ll mid = l + r &gt;&gt; 1;
+	pushdown(u);
+	if(qr &lt;= mid)	query(u &lt;&lt; 1, l, mid, ql, qr);
+	else if(ql &gt; mid)	query(u &lt;&lt; 1 | 1, mid + 1, r, ql, qr);
+	else
+	{
+		return (query(u &lt;&lt; 1, l, mid, ql, mid) + query(u &lt;&lt; 1 | 1, mid + 1, r, mid + 1, qr)) % mod;
+	}
+}
+
+int main()
+{
+	scanf(&quot;%d%d&quot;, &amp;n, &amp;q);
+	for(int i = 1; i &lt;= n; i ++)	scanf(&quot;%d&quot;, &amp;a[i]);
+	build(1, 1, n);
+	while(q --)
+	{
+		int op;
+		scanf(&quot;%d&quot;, &amp;op);
+		if(op &lt;= 3)
+		{
+			int l, r, d;
+			scanf(&quot;%d%d%d&quot;, &amp;l, &amp;r, &amp;d);
+			if(op == 1)
+				modify(1, 1, n, l, r, (tag){1, d});
+			if(op == 2)
+				modify(1, 1, n, l, r, (tag){d, 0});
+			if(op == 3)
+				modify(1, 1, n, l, r, (tag){0, d});
+		}
+		else
+		{
+			int l, r;
+			scanf(&quot;%d%d&quot;, &amp;l, &amp;r);
+			ll res = query(1, 1, n, l, r);
+			printf(&quot;%lld\n&quot;, res);
+		}
+	}
+	return 0;
+}
+</code></pre>
+<h2 id="4-线段树上二分">4. 线段树上二分</h2>
+<h2 id="5-扫描线与权值线段树">5. 扫描线与权值线段树</h2>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/memsetray/cdn@latest/img/custom/donate/AliPayQR.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/memsetray/cdn@latest/img/custom/donate/WeChanQR.jpg"></li>
+              </ul>
             </div>
           </div>
         </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
       </article>
-    </div>
-  </div>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+          
+            <div class="post-nepre full next">
+          
+            <a href="/2022/10/15/AtCoderBeginnerContest046题解/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://s3.bmp.ovh/imgs/2022/10/15/99c5ec0b733bb55c.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://s3.bmp.ovh/imgs/2022/10/15/99c5ec0b733bb55c.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                AtCoderBeginnerContest046题解</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+
+
+    <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+    <div id="waline"></div>
+    <style>
+    #waline textarea {
+        box-sizing: border-box;
+        background: url("https://gitee.com/cungudafa/source/raw/master/img/gif/Sitich/Sitich2.gif") 100% 100% no-repeat;
+    }
+    </style>
+    <script>
+        Waline({
+              el: '#waline',
+              serverURL: 'waline-ten-pied.vercel.app',
+              pageSize: '10',
+              lang: 'zh-CN',
+              requiredFields: ['nick','mail'], //设置必填项
+              placeholder: '快来发送评论吐槽吧~',
+              visitor: 'true',
+	      locale: {
+    		level0: 'Level 1',
+    		level1: 'Level 2',
+    		level2: 'Level 3',
+    		level3: 'Level 4',
+    		level4: 'Level 5',
+    		level5: 'Level 6',
+ 		 },
+              emoji: [
+                  'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba',
+                  'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili',
+                  'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/weibo',
+              ],
+              avatar: 'mp',
+              dark: 'false',
+
+            });
+    </script>
+<style>
+/*设置 Waline 的主题色*/
+:root{
+--waline-badge-color: #FF0000;
+}
+</style>
+
+
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+          <a href="sakana.icu" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/memsetray/cdn/img/custom/avatar.jpg" itemprop="image" alt="Ray" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="sakana.icu" itemprop="url" rel="author">Ray</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>一个蒟蒻ACMer</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
+
+
 
     </div>    
     <div class="ins-search">
