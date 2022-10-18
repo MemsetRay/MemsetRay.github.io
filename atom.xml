@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memsetray.github.io/"/>
-  <updated>2022-10-18T03:10:18.143Z</updated>
+  <updated>2022-10-18T05:56:22.974Z</updated>
   <id>https://memsetray.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ACM算法模板</title>
+    <link href="https://memsetray.github.io/2022/10/18/ACM%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/"/>
+    <id>https://memsetray.github.io/2022/10/18/ACM算法模板/</id>
+    <published>2022-10-18T05:52:56.000Z</published>
+    <updated>2022-10-18T05:56:22.974Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;1. 基础算法&lt;/h1&gt;
+&lt;h4 id=&quot;1-1求逆序对数量&quot;&gt;1.1求逆序对数量&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;long long m_sort(int l,int r)
+{
+    if(l&amp;gt;=r) return
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>线段树</title>
