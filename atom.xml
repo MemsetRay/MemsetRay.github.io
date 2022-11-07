@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memsetray.github.io/"/>
-  <updated>2022-11-03T15:28:36.415Z</updated>
+  <updated>2022-11-07T13:17:13.192Z</updated>
   <id>https://memsetray.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>每日两题2022-11-7</title>
+    <link href="https://memsetray.github.io/2022/11/07/%E6%AF%8F%E6%97%A5%E4%B8%A4%E9%A2%982022-11-7/"/>
+    <id>https://memsetray.github.io/2022/11/07/每日两题2022-11-7/</id>
+    <published>2022-11-07T13:16:22.000Z</published>
+    <updated>2022-11-07T13:17:13.192Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;每日两题2022-11-6&lt;/h1&gt;
+&lt;h2 id=&quot;abc130d-enough-array&quot;&gt;ABC130D -&lt;strong&gt;Enough Array&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;给出&lt;span class=&quot;katex&quot;&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>每日一题2022-11-3</title>
