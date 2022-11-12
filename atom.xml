@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memsetray.github.io/"/>
-  <updated>2022-11-07T13:17:13.192Z</updated>
+  <updated>2022-11-12T11:36:38.780Z</updated>
   <id>https://memsetray.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>整除分块</title>
+    <link href="https://memsetray.github.io/2022/11/12/%E6%95%B4%E9%99%A4%E5%88%86%E5%9D%97/"/>
+    <id>https://memsetray.github.io/2022/11/12/整除分块/</id>
+    <published>2022-11-12T11:32:16.000Z</published>
+    <updated>2022-11-12T11:36:38.780Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;整除分块&lt;/h1&gt;
+&lt;p&gt;整除分块可以快速计算含有下取整除法的和式，时间复杂度&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>每日两题2022-11-7</title>
