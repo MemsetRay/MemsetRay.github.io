@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memsetray.github.io/"/>
-  <updated>2022-11-21T15:11:10.519Z</updated>
+  <updated>2022-12-26T14:09:10.297Z</updated>
   <id>https://memsetray.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>网络流基础</title>
+    <link href="https://memsetray.github.io/2022/12/26/%E7%BD%91%E7%BB%9C%E6%B5%81%E5%9F%BA%E7%A1%80/"/>
+    <id>https://memsetray.github.io/2022/12/26/网络流基础/</id>
+    <published>2022-12-26T14:07:36.000Z</published>
+    <updated>2022-12-26T14:09:10.297Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;网络流&lt;/h1&gt;
+&lt;h2 id=&quot;1-基本概念&quot;&gt;1. 基本概念&lt;/h2&gt;
+&lt;p&gt;1.1 最大流最小割定理：&lt;/p&gt;
+&lt;p&gt;​	（1）流&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>单片机复习笔记</title>
     <link href="https://memsetray.github.io/2022/11/21/%E5%8D%95%E7%89%87%E6%9C%BA%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>https://memsetray.github.io/2022/11/21/单片机复习笔记/</id>
     <published>2022-11-21T15:10:36.000Z</published>
-    <updated>2022-11-21T15:11:10.519Z</updated>
+    <updated>2022-12-26T14:09:34.737Z</updated>
     
     <summary type="html">
     
