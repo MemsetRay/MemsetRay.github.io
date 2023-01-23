@@ -506,6 +506,217 @@ int main()
 }
 </code></pre>
 </details>
+<h2 id="4-网络流求解问题的步骤">4. 网络流求解问题的步骤</h2>
+<ol>
+<li>考虑可行解的集合和流网络的所有可行流的集合</li>
+<li>证明可行解的集合与流网络的所有可行流的集合一一对应（可行流&lt;-&gt;可行解）</li>
+</ol>
+<p>网络流求解二分图匹配问题（时间复杂度O(<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><msqrt><mi>n</mi></msqrt></mrow><annotation encoding="application/x-tex">m\sqrt{n}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.04em;vertical-align:-0.23972em;"></span><span class="mord mathdefault">m</span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8002800000000001em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord mathdefault">n</span></span></span><span style="top:-2.76028em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg width="400em" height="1.08em" viewbox="0 0 400000 1080" preserveaspectratio="xMinYMin slice"><path d="M95,702
+c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
+c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
+c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
+s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
+c69,-144,104.5,-217.7,106.5,-221
+l0 -0
+c5.3,-9.3,12,-14,20,-14
+H400000v40H845.2724
+s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
+c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
+M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.23972em;"><span></span></span></span></span></span></span></span></span>，匈牙利算法为O(nm))</p>
+<p>匈牙利算法本质上是EK算法，二分图匹配问题即在网络流中求最大流</p>
+<details>    
+	<summary> <font face="Comic Sans MS" size="4" color="green">模板（带具体方案）</font></summary>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N = 100, M = 5210, INF = 1e8;
+int n, m, S, T;
+int h[N], e[M], ne[M], f[M], idx;
+int d[N], cur[N];
+int res, flow;
+
+void add(int a, int b, int c)
+{
+    e[idx] = b, ne[idx] = h[a], f[idx] = c; h[a] = idx ++;
+    e[idx] = a, ne[idx] = h[b], f[idx] = 0, h[b] = idx ++;
+}
+
+bool bfs()
+{
+    queue&lt;int&gt; q;
+    q.push(S);
+    memset(d, -1, sizeof d);
+    d[S] = 0, cur[S] = h[S];
+    while(q.size())
+    {
+        int t = q.front();
+        q.pop();
+        for(int i = h[t]; ~ i; i = ne[i])
+        {
+            int j = e[i];
+            if(d[j] == -1 &amp;&amp; f[i])
+            {
+                d[j] = d[t] + 1;
+                cur[j] = h[j];
+                if(j == T)  return true;
+                q.push(j);
+            }
+        }
+    }
+    return false;
+}
+
+int dfs(int u, int l)
+{
+    if(u == T)  return l;
+    int flow = 0;
+    for(int i = cur[u]; ~ i &amp;&amp; flow &lt; l; i = ne[i])
+    {
+        cur[u] = i;
+        int j = e[i];
+        if(d[j] == d[u] + 1 &amp;&amp; f[i])
+        {
+            int t = dfs(j, min(f[i], l - flow));
+            if(! t) d[j] = -1;
+            f[i] -= t, f[i ^ 1] += t, flow += t;
+        }
+    }
+    return flow;
+}
+
+int dinic()
+{
+    int r = 0, flow;
+    while(bfs())
+    {
+        while(flow = dfs(S, INF))   r += flow;
+    }
+    return r;
+}
+
+int main()
+{
+    cin &gt;&gt; m &gt;&gt; n;
+    S = 0, T = n + 1;
+    memset(h, -1, sizeof h);
+    for(int i = 1; i &lt;= m; i ++)    add(S, i, 1);
+    for(int i = m + 1; i &lt;= n; i ++)    add(i, T, 1);
+    int a, b;
+    while(cin &gt;&gt; a &gt;&gt; b, a != -1)   add(a, b, 1);
+    cout &lt;&lt; dinic() &lt;&lt; endl;
+    for(int i = 0; i &lt; idx; i += 2)
+    {
+        if(e[i] &gt; m &amp;&amp; e[i] &lt;= n &amp;&amp; !f[i])
+            cout &lt;&lt; e[i ^ 1] &lt;&lt; &quot; &quot; &lt;&lt; e[i] &lt;&lt; endl;
+    }
+    return 0;
+}
+</code></pre>
+</details>
+<h2 id="5-上下界可行流">5. 上下界可行流</h2>
+<p>具有上界和下界限制的可行流，同样满足流量守恒，但是容量具有限制</p>
+<p>![SmartSelect_20230117_193402_Samsung Notes](C:\Users\LQR\Pictures\三星多屏联动\SmartSelect_20230117_193402_Samsung Notes.jpg)</p>
+<p>模板题：</p>
+<p>给定一个包含 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 个点 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span> 条边的有向图，每条边都有一个流量下界和流量上界，求一种可行方案使得在所有点满足流量平衡条件的前提下，所有边满足流量限制。</p>
+<details>    
+	<summary> <font face="Comic Sans MS" size="4" color="green">模板</font></summary>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N = 600, M = 1e6, INF = 1e8;
+int h[N], e[M], ne[M], f[M], idx, l[M];
+int cur[N], d[N], A[N];
+int m, n, S, T;
+
+void add(int a, int b, int c, int d)
+{
+    e[idx] = b, ne[idx] = h[a], f[idx] = d - c, l[idx] = c, h[a] = idx ++;
+    e[idx] = a, ne[idx] = h[b]; f[idx] = 0, h[b] = idx ++;
+}
+
+bool bfs()
+{
+    memset(d, -1, sizeof d);
+    queue&lt;int&gt; q;
+    q.push(S);
+    d[S] = 0, cur[S] = h[S];
+    while(q.size())
+    {
+        int t = q.front();
+        q.pop();
+        for(int i = h[t]; ~i; i = ne[i])
+        {
+            int j = e[i];
+            if(d[j] == -1 &amp;&amp; f[i])
+            {
+                d[j] = d[t] + 1;
+                cur[j] = h[j];
+                if(j == T)  return true;
+                q.push(j);
+            }
+        }
+    }
+    return false;
+}
+
+int dfs(int u, int l)
+{
+    if(u == T)  return l;
+    int flow = 0;
+    for(int i = cur[u]; ~i &amp;&amp; flow &lt; l; i = ne[i])
+    {
+        cur[u] = i;
+        int j = e[i];
+        if(d[j] == d[u] + 1 &amp;&amp; f[i])
+        {
+            int t = dfs(j, min(f[i], l - flow));
+            if(!t)  d[j] = -1;
+            f[i] -= t, f[i ^ 1] += t, flow += t;
+        }
+    }
+    return flow;
+}
+
+int dinic()
+{
+    int r = 0, flow;
+    while(bfs())
+    {
+        while(flow = dfs(S, INF))   r += flow;
+    }
+    return r;
+}
+
+int main()
+{
+    memset(h, -1, sizeof h);
+    cin &gt;&gt; n &gt;&gt; m;
+    int sum = 0;
+    S = 0, T = n + 1;
+    for(int i = 0; i &lt; m; i ++)
+    {
+        int a, b, c, d;
+        cin &gt;&gt; a &gt;&gt; b &gt;&gt; c &gt;&gt; d;
+        add(a, b, c, d);
+        A[a] -= c, A[b] += c;
+    }
+
+    for(int i = 1; i &lt;= n; i ++)
+    {
+        if(A[i] &gt; 0)    add(S, i, 0, A[i]), sum += A[i];
+        else if(A[i] &lt; 0)   add(i, T, 0, -A[i]);
+    }
+
+    if(dinic() != sum)  cout &lt;&lt; &quot;NO&quot; &lt;&lt; endl;
+    else
+    {
+        cout &lt;&lt; &quot;YES&quot; &lt;&lt; endl;
+        for(int i = 0; i &lt; m * 2; i += 2)
+            cout &lt;&lt; f[i ^ 1] + l[i] &lt;&lt; endl;
+    }
+    return 0;
+}
+</code></pre>
+</details>
+
         </div>
         <!-- .entry-content -->
         <div class="single-reward">
@@ -650,7 +861,7 @@ int main()
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2022 Ray<br>
+      &copy; 2023 Ray<br>
       powered_by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
